@@ -1,5 +1,7 @@
 # Duracell Hybrid Inverter HACS Integration
 
+**This is a work in progress and will add more sensors as and when they are discovered.**
+
 This is a **Home Assistant HACS integration** for the Duracell Hybrid Inverter (Dura-i series). It exposes all available **live data, statistics, and configuration registers** via sensors and supports **GUI setup** through Home Assistant.
 
 ---
