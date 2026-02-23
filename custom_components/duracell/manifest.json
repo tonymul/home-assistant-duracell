@@ -1,0 +1,9 @@
+{
+  "domain": "duracell",
+  "name": "Duracell Hybrid Inverter",
+  "version": "0.1",
+  "documentation": "https://github.com/tonymul/home-assistant-duracell",
+  "dependencies": ["modbus"],
+  "codeowners": ["@tonymul"],
+  "requirements": []
+}
