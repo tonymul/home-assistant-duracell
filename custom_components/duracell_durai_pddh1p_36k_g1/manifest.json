@@ -1,0 +1,12 @@
+{
+  "domain": "duracell_inverter",
+  "name": "Duracell Hybrid Inverter",
+  "documentation": "https://github.com/tonymul/home-assistant-duracell",
+  "issue_tracker": "https://github.com/tonymul/home-assistant-duracell/issues",
+  "requirements": ["pymodbus>=2.5.3"],
+  "version": "0.1.0",
+  "integration_type": "device",
+  "codeowners": ["@tonymul"],
+  "iot_class": "local_polling",
+  "config_flow": true
+}

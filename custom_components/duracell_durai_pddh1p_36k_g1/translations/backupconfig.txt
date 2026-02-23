@@ -1,0 +1,157 @@
+default_config:
+
+frontend:
+  themes: !include_dir_merge_named themes
+
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
+modbus:
+  - name: duracell_inverter
+    type: tcp
+    host: 192.168.50.4
+    port: 502
+    sensors:
+
+      # ------- BATTERY SETTINGS -------
+      - name: "Duracell Battery Grid Charge Max Power"
+        address: 8470
+        scale: 1
+        precision: 0
+        unit_of_measurement: "W"
+        data_type: int16
+
+      - name: "Duracell Battery Max Charge Power"
+        address: 8472
+        scale: 1
+        precision: 0
+        unit_of_measurement: "W"
+        data_type: int16
+
+      - name: "Duracell Battery Max Discharge Power"
+        address: 8474
+        scale: 1
+        precision: 0
+        unit_of_measurement: "W"
+        data_type: int16
+
+      - name: "Duracell Battery Charge End Capacity"
+        address: 8473
+        scale: 1
+        precision: 0
+        unit_of_measurement: "%"
+        data_type: int16
+
+      - name: "Duracell Battery Discharge End Capacity"
+        address: 8475
+        scale: 1
+        precision: 0
+        unit_of_measurement: "%"
+        data_type: int16
+
+      - name: "Duracell Discharge End SOC (Grid)"
+        address: 8522
+        scale: 1
+        precision: 0
+        unit_of_measurement: "%"
+        data_type: int16
+
+      - name: "Duracell Force Charge Start SOC"
+        address: 8516
+        scale: 1
+        precision: 0
+        unit_of_measurement: "%"
+        data_type: int16
+
+      - name: "Duracell Force Charge Stop SOC"
+        address: 8517
+        scale: 1
+        precision: 0
+        unit_of_measurement: "%"
+        data_type: int16
+
+      # ------- GRID SETTINGS -------
+      - name: "Duracell Grid Max Input Power"
+        address: 8485
+        scale: 1
+        precision: 0
+        unit_of_measurement: "W"
+        data_type: int16
+
+      - name: "Duracell Grid Max Force Charge"
+        address: 8528
+        scale: 1
+        precision: 0
+        unit_of_measurement: "W"
+        data_type: int16
+
+      # ------- LIVE DATA -------
+      - name: "Duracell Battery SOC"
+        address: 8192
+        scale: 1
+        precision: 0
+        unit_of_measurement: "%"
+        data_type: int16
+
+      - name: "Duracell BMS Error Code"
+        address: 8194
+        scale: 1
+        precision: 0
+        data_type: int16
+
+      - name: "Duracell Battery Voltage"
+        address: 8198
+        scale: 0.1
+        precision: 1
+        unit_of_measurement: "V"
+        data_type: int16
+
+      - name: "Duracell Battery Current"
+        address: 8200
+        scale: 0.01
+        precision: 2
+        unit_of_measurement: "A"
+        data_type: int16
+
+      - name: "Duracell Battery Power"
+        address: 8202
+        scale: 0.1
+        precision: 1
+        unit_of_measurement: "W"
+        data_type: int16
+
+      - name: "Duracell Battery Temperature"
+        address: 8219
+        scale: 1
+        precision: 0
+        unit_of_measurement: "°C"
+        data_type: int16
+
+      - name: "Duracell Inverter Temperature"
+        address: 4124
+        scale: 1
+        precision: 0
+        unit_of_measurement: "°C"
+        data_type: int16
+
+      - name: "Duracell Grid Voltage"
+        address: 4097
+        scale: 0.1
+        precision: 1
+        unit_of_measurement: "V"
+        data_type: int16
+
+      - name: "Duracell Grid Frequency"
+        address: 4101
+        scale: 0.01
+        precision: 2
+        unit_of_measurement: "Hz"
+        data_type: int16
+
+      - name: "Duracell PV Power (Unconfirmed)"
+        address: 4100
+        scale: 0.1
+        precision: 1
+        unit_of_measurement: "W"
+        data_type: int16

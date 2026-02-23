@@ -1,0 +1,239 @@
+modbus:
+  - name: duracell_durai
+    type: tcp
+    host: 192.168.1.50   # ← change to your inverter IP
+    port: 502
+
+    sensors:
+
+      ########################################
+      #          LIVE DATA
+      ########################################
+
+      - name: "Duracell Battery SOC"
+        address: 8192
+        input_type: holding
+        data_type: uint16
+        unit_of_measurement: "%"
+        scan_interval: 2
+
+      - name: "Duracell BMS Code"
+        address: 8194
+        input_type: holding
+        data_type: uint16
+        scan_interval: 2
+
+      - name: "Duracell Battery Voltage"
+        address: 8198
+        input_type: holding
+        data_type: uint16
+        scale: 0.1
+        unit_of_measurement: "V"
+        device_class: voltage
+        scan_interval: 2
+
+      - name: "Duracell Battery Current"
+        address: 8200
+        input_type: holding
+        data_type: int16
+        scale: 0.01
+        unit_of_measurement: "A"
+        device_class: current
+        scan_interval: 2
+
+      - name: "Duracell Battery Power"
+        address: 8202
+        input_type: holding
+        data_type: int16
+        scale: 0.1
+        unit_of_measurement: "W"
+        device_class: power
+        scan_interval: 2
+
+      - name: "Duracell Battery Temperature"
+        address: 8219
+        input_type: holding
+        data_type: uint16
+        unit_of_measurement: "°C"
+        device_class: temperature
+        scan_interval: 2
+
+      - name: "Duracell Inverter Temperature"
+        address: 4124
+        input_type: holding
+        data_type: uint16
+        unit_of_measurement: "°C"
+        device_class: temperature
+        scan_interval: 2
+
+      - name: "Duracell Grid Voltage"
+        address: 4097
+        input_type: holding
+        data_type: uint16
+        scale: 0.1
+        unit_of_measurement: "V"
+        device_class: voltage
+        scan_interval: 2
+
+      - name: "Duracell Grid Frequency"
+        address: 4101
+        input_type: holding
+        data_type: uint16
+        scale: 0.01
+        unit_of_measurement: "Hz"
+        device_class: frequency
+        scan_interval: 2
+
+      - name: "Duracell PV Power Total"
+        address: 4100
+        input_type: holding
+        data_type: uint16
+        scale: 0.1
+        unit_of_measurement: "W"
+        device_class: power
+        scan_interval: 2
+
+      - name: "Duracell MPPT1 Voltage"
+        address: 4112
+        input_type: holding
+        data_type: uint16
+        scale: 0.1
+        unit_of_measurement: "V"
+        device_class: voltage
+        scan_interval: 2
+
+      - name: "Duracell MPPT1 Current"
+        address: 4113
+        input_type: holding
+        data_type: uint16
+        scale: 0.01
+        unit_of_measurement: "A"
+        device_class: current
+        scan_interval: 2
+
+      - name: "Duracell MPPT1 Power"
+        address: 4115
+        input_type: holding
+        data_type: uint16
+        scale: 0.1
+        unit_of_measurement: "W"
+        device_class: power
+        scan_interval: 2
+
+      - name: "Duracell Grid Power"
+        address: 2041
+        input_type: holding
+        data_type: int16
+        scale: 0.01
+        unit_of_measurement: "W"
+        device_class: power
+        scan_interval: 2
+
+      - name: "Duracell Load Power"
+        address: 2046
+        input_type: holding
+        data_type: int16
+        scale: 0.01
+        unit_of_measurement: "W"
+        device_class: power
+        scan_interval: 2
+
+      - name: "Duracell Grid/CT Current"
+        address: 4894
+        input_type: holding
+        data_type: int16
+        scale: 0.01
+        unit_of_measurement: "A"
+        device_class: current
+        scan_interval: 2
+
+
+      ########################################
+      #          STATISTICS
+      ########################################
+
+      - name: "Duracell PV Peak Power"
+        address: 4156
+        input_type: holding
+        data_type: uint16
+        scale: 0.1
+        unit_of_measurement: "W"
+        device_class: power
+
+      - name: "Duracell Energy Total"
+        address: 4130
+        input_type: holding
+        data_type: uint16
+        unit_of_measurement: "kWh"
+
+      - name: "Duracell Energy Today"
+        address: 4136
+        input_type: holding
+        data_type: uint16
+        scale: 0.001
+        unit_of_measurement: "kWh"
+
+
+      ########################################
+      #          CONFIGURATION REGISTERS
+      ########################################
+
+      - name: "Duracell Grid Charge Max Power"
+        address: 8470
+        input_type: holding
+        data_type: uint16
+        unit_of_measurement: "W"
+
+      - name: "Duracell Max Charge Power"
+        address: 8472
+        input_type: holding
+        data_type: uint16
+        unit_of_measurement: "W"
+
+      - name: "Duracell Max Discharge Power"
+        address: 8474
+        input_type: holding
+        data_type: uint16
+        unit_of_measurement: "W"
+
+      - name: "Duracell Charge End SOC"
+        address: 8473
+        input_type: holding
+        data_type: uint16
+        unit_of_measurement: "%"
+
+      - name: "Duracell Discharge End SOC"
+        address: 8475
+        input_type: holding
+        data_type: uint16
+        unit_of_measurement: "%"
+
+      - name: "Duracell Discharge End SOC On-Grid"
+        address: 8522
+        input_type: holding
+        data_type: uint16
+        unit_of_measurement: "%"
+
+      - name: "Duracell Force Charge SOC Start"
+        address: 8516
+        input_type: holding
+        data_type: uint16
+        unit_of_measurement: "%"
+
+      - name: "Duracell Force Charge SOC Stop"
+        address: 8517
+        input_type: holding
+        data_type: uint16
+        unit_of_measurement: "%"
+
+      - name: "Duracell Max Grid Input"
+        address: 8485
+        input_type: holding
+        data_type: uint16
+        unit_of_measurement: "W"
+
+      - name: "Duracell Max Grid Force Charge"
+        address: 8528
+        input_type: holding
+        data_type: uint16
+        unit_of_measurement: "W"
