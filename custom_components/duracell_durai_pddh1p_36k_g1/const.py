@@ -49,18 +49,14 @@ SENSORS = [
         "data_type": "uint16", "device_class": "temperature", "state_class": "measurement",
     },
     {
-        "name": "Duracell Battery Capacity",
-        "address": 8238, "unit_of_measurement": "Ah", "scale": 0.1,
-        "data_type": "uint16", "state_class": "measurement",
-    },
-    {
+
         "name": "Duracell Battery Max Charge Current",
-        "address": 8240, "unit_of_measurement": "A", "scale": 0.1,
+        "address": 8243, "unit_of_measurement": "A", "scale": 0.01,
         "data_type": "uint16", "device_class": "current", "state_class": "measurement",
     },
     {
         "name": "Duracell Battery Max Discharge Current",
-        "address": 8241, "unit_of_measurement": "A", "scale": 0.1,
+        "address": 8245, "unit_of_measurement": "A", "scale": 0.01,
         "data_type": "uint16", "device_class": "current", "state_class": "measurement",
     },
     {
@@ -92,17 +88,17 @@ SENSORS = [
     },
     {
         "name": "Duracell Inverter Rated Power",
-        "address": 4195, "unit_of_measurement": "W",
+        "address": 2475, "unit_of_measurement": "W",
         "data_type": "uint16", "device_class": "power", "state_class": "measurement",
     },
     {
         "name": "Duracell AC Output Voltage",
-        "address": 4176, "unit_of_measurement": "V", "scale": 0.1,
+        "address": 4097, "unit_of_measurement": "V", "scale": 0.1,
         "data_type": "uint16", "device_class": "voltage", "state_class": "measurement",
     },
     {
         "name": "Duracell AC Output Power",
-        "address": 4106, "unit_of_measurement": "W", "scale": 0.1,
+        "address": 2046, "unit_of_measurement": "W", "scale": 0.1,
         "data_type": "uint16", "device_class": "power", "state_class": "measurement",
     },
     {
@@ -141,7 +137,7 @@ SENSORS = [
     # ── SOLAR / PV ───────────────────────────────────────────────────
     {
         "name": "Duracell PV Power Total",
-        "address": 4100, "unit_of_measurement": "W", "scale": 0.1,
+        "address": 4115, "unit_of_measurement": "W", "scale": 0.1,
         "data_type": "uint16", "device_class": "power", "state_class": "measurement",
     },
     {
