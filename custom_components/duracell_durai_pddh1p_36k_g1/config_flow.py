@@ -3,6 +3,7 @@ from homeassistant import config_entries
 from .const import DOMAIN, DEFAULT_SCAN_INTERVAL
 
 class DuracellInverterConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
+    """Handle a config flow for Duracell Inverter."""
     VERSION = 1
 
     async def async_step_user(self, user_input=None):
